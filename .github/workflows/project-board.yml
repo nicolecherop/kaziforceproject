@@ -1,0 +1,23 @@
+name: Project board automation
+
+on:
+  issues:
+    types: [opened, reopened]
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+jobs:
+  add-to-project:
+    if: github.event_name == 'issues' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add item to project board
+        uses: actions/add-to-project@v1.0.2
+        with:
+          project-url: ${{ vars.GITHUB_PROJECT_URL }}
+          github-token: ${{ secrets.GH_PROJECT_AUTOMATION_TOKEN }}

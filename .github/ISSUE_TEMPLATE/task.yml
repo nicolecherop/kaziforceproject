@@ -1,0 +1,30 @@
+name: Task
+description: Track a maintenance, docs, or refactor task.
+title: "task: "
+labels:
+  - chore
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      placeholder: What is the task and why does it matter?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      placeholder: What is included and excluded?
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      placeholder: |
+        - [ ] Code updated
+        - [ ] Tests updated
+        - [ ] Docs updated
+    validations:
+      required: true

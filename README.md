@@ -1,6 +1,6 @@
 ﻿# KaziForce
 
-A capstone implementation of **Profile and Skills Evaluation Using TF-IDF and Cosine Similarity for Candidate-Job Matching**, based on Nicole Cherop Cheruiyot's proposal PDF and defence slides.
+A capstone implementation of **Profile and Skills Evaluation Using TF-IDF and Cosine Similarity for Candidate-Job Matching**
 
 The application uses **Python, Django, PostgreSQL on Neon, NLTK, scikit-learn, ESCO, HTML, CSS and JavaScript**. `psycopg` is Django's PostgreSQL driver. No frontend framework, transformer, external AI service, model training or alternative database is used. Dependencies brought in by those packages are their supporting libraries.
 
@@ -128,8 +128,4 @@ This is the proposal's controlled capstone prototype. The database is online; th
 
 The matching engine processes an in-memory corpus for each ranking request. It fits IDF over the compared documents without supervised training. This suits the controlled prototype, not millions of profiles. Scores describe textual evidence; they do not verify qualifications, infer ability or make automated hiring decisions.
 
-## Keeping the project small
 
-The full ESCO catalogue is reference data needed to recognise skills and occupations across professions. Keep it, the Django system tables, migrations, tests and NLTK resources. Generated download CSVs and `tmp/esco-pages/` can be removed after a successful import; the downloader can recreate them. Keep `.env`, uploaded resumes and your account records private and intact.
-
-The September 2026 cleanup retains a small demo and removes disposable setup artifacts. Its private database backup is `.local/backups/before-simplification.json.gz`; counts are recorded in `.local/simplification-results.json`. The backup contains sensitive account data and is excluded from Git. Matching fetches requirements for all compared jobs in one query and reuses the ESCO index. Database connections can be reused for up to 60 seconds, with health checks before reuse.

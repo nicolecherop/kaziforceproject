@@ -39,7 +39,6 @@ $payload = @{
         require_code_owner_reviews  = $false
         required_approving_review_count = 1
     }
-    restrictions = $null
     allow_force_pushes = $false
     allow_deletions = $false
     required_conversation_resolution = $true
